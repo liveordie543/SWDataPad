@@ -1,0 +1,30 @@
+﻿@model SWDataPad.Models.Login.LoginModel
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<div class="blank_page">
+    <div class="title_center_area">
+        Login
+    </div>
+    <div class="login_area">
+        @using (Html.BeginForm())
+        {
+            <div>
+                @Html.LabelFor(model => model.Username)
+                @Html.TextBoxFor(model => model.Username)
+                @Html.ValidationMessageFor(model => model.Username)
+            </div>
+            <div class="login_password_area">
+                @Html.LabelFor(model => model.Password)
+                @Html.PasswordFor(model => model.Password)
+                @Html.ValidationMessageFor(model => model.Password)
+            </div>
+            <div class="login_button_area">
+                <input type="button" value="Register" onclick="window.location.href = '@Url.Action("Register")';"/>
+                <input class="login_submit_button" type="submit" value="Sign In" />
+            </div>
+        }
+    </div>
+</div>

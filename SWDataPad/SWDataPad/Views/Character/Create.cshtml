@@ -1,0 +1,141 @@
+﻿@model SWDataPad.Models.Character.CreateCharacterModel
+
+@{
+    ViewBag.Title = "Create Character";
+}
+
+<div class="blank_page">
+    <div class="title_center_area_2">
+        Create Character
+        <a class="sign_out_no_char" href="@Url.Action("LogOut", "Login")">Sign Out</a>
+    </div>
+    @using (Html.BeginForm())
+    {
+        <div class="create_char_area">
+            <div style="width: 50%; float: left;">
+                <div>
+                    <div class="cell1">
+                        @Html.LabelFor(model => model.Name)
+                    </div>
+                    <div class="cell2">
+                        @Html.TextBoxFor(model => model.Name)
+                        @Html.ValidationMessageFor(model => model.Name)
+                    </div>
+                </div>
+                <div>
+                    <div class="cell1">
+                        @Html.LabelFor(model => model.Class)
+                    </div>
+                    <div class="cell2">
+                        @Html.TextBoxFor(model => model.Class)
+                        @Html.ValidationMessageFor(model => model.Class)
+                    </div>
+                </div>
+                <div>
+                    <div class="cell1">
+                        @Html.LabelFor(model => model.Species)
+                    </div>
+                    <div class="cell2">
+                        @Html.TextBoxFor(model => model.Species)
+                        @Html.ValidationMessageFor(model => model.Species)
+                    </div>
+                </div>
+                <div>
+                    <div class="cell1">
+                        @Html.LabelFor(model => model.Level)
+                    </div>
+                    <div class="cell2">
+                        @Html.TextBoxFor(model => model.Level)
+                        @Html.ValidationMessageFor(model => model.Level)
+                    </div>
+                </div>
+                <div>
+                    <div class="cell1">
+                        @Html.LabelFor(model => model.Age)
+                    </div>
+                    <div class="cell2">
+                        @Html.TextBoxFor(model => model.Age)
+                        @Html.ValidationMessageFor(model => model.Age)
+                    </div>
+                </div>
+                <div>
+                    <div class="cell1">
+                        @Html.LabelFor(model => model.Gender)
+                    </div>
+                    <div class="cell2">
+                        @Html.TextBoxFor(model => model.Gender)
+                        @Html.ValidationMessageFor(model => model.Gender)
+                    </div>
+                </div>
+                <div>
+                    <div class="cell1">
+                        @Html.LabelFor(model => model.Height)
+                    </div>
+                    <div class="cell2">
+                        @Html.TextBoxFor(model => model.Height)
+                        @Html.ValidationMessageFor(model => model.Height)
+                    </div>
+                </div>
+            </div>
+            <div style="width: 50%; float: right;">
+                <div>
+                    <div class="cell1">
+                        @Html.LabelFor(model => model.Weight)
+                    </div>
+                    <div class="cell2">
+                        @Html.TextBoxFor(model => model.Weight)
+                        @Html.ValidationMessageFor(model => model.Weight)
+                    </div>
+                </div>
+                <div>
+                    <div class="cell1">
+                        @Html.LabelFor(model => model.Background)
+                    </div>
+                    <div class="cell2">
+                        @Html.TextBoxFor(model => model.Background)
+                        @Html.ValidationMessageFor(model => model.Background)
+                    </div>
+                </div>
+                <div>
+                    <div class="cell1">
+                        @Html.LabelFor(model => model.Destiny)
+                    </div>
+                    <div class="cell2">
+                        @Html.TextBoxFor(model => model.Destiny)
+                        @Html.ValidationMessageFor(model => model.Destiny)
+                    </div>
+                </div>
+                <div>
+                    <div class="cell1">
+                        @Html.LabelFor(model => model.Credits)
+                    </div>
+                    <div class="cell2">
+                        @Html.TextBoxFor(model => model.Credits)
+                        @Html.ValidationMessageFor(model => model.Credits)
+                    </div>
+                </div>
+                <div>
+                    <div class="cell1">
+                        @Html.LabelFor(model => model.MaxHp)
+                    </div>
+                    <div class="cell2">
+                        @Html.TextBoxFor(model => model.MaxHp)
+                        @Html.ValidationMessageFor(model => model.MaxHp)
+                    </div>
+                </div>
+                <div>
+                    <div class="cell1">
+                        @Html.LabelFor(model => model.Experience)
+                    </div>
+                    <div class="cell2">
+                        @Html.TextBoxFor(model => model.Experience)
+                        @Html.ValidationMessageFor(model => model.Experience)
+                    </div>
+                </div>
+                <div style="margin-top: 3px; margin-right: 19px;float: right;">
+                    <input type="submit" value="Create"/>
+                </div>
+            </div>
+        </div>
+    }
+</div>

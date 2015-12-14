@@ -1,0 +1,37 @@
+﻿@using GridMvc.Html
+@using SWDataPad.Data.Entities
+@model IEnumerable<SWDataPad.Data.Entities.Character>
+
+@{
+    ViewBag.Title = "Character Select";
+}
+
+<div class="blank_page">
+    <div class="title_center_area_2">
+        Character Select
+        <a class="sign_out_no_char" href="@Url.Action("LogOut", "Login")">Sign Out</a>
+    </div>
+    <div class="character_select_area">
+        <input class="create_new_char_btn" type="button" value="Create New" onclick="window.location.href = '@Url.Action("Create")';"/>
+        @Html.Grid(Model).Columns(columns =>
+        {
+            columns.Add(c => c.Name).Titled("Name").ThenSortBy(c => c.Name).SetWidth("24%");
+            columns.Add(c => c.Class).Titled("Class").SetWidth("22%");
+            columns.Add(c => c.Species).Titled("Species").SetWidth("20%");
+            columns.Add(c => c.Level).Titled("Level").SetWidth("2%");
+            columns.Add().Sanitized(false).Encoded(false).RenderValueAs(c => Html.ActionLink("Activate", "Activate", new {characterId = c.Id}).ToHtmlString()
+                                                                             + " | " + Html.ActionLink("Edit", "Edit", new {characterId = c.Id}).ToHtmlString()
+                                                                             + " | " + Html.ActionLink("Delete", "Delete", new {characterId = c.Id}, new {onclick = "return onDelete();"}).ToHtmlString()).SetWidth("32%");
+        }).Selectable(false)
+    </div>
+</div>
+<script type="text/javascript">
+    $(function() 
+    {
+        $(".character_select_area").jScrollPane();
+    });
+
+    function onDelete() {
+        return confirm("Are you sure you want to delete this character?");
+    }
+</script>

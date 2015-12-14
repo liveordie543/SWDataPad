@@ -1,0 +1,1147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="Model1StoreContainer">
+    <EntitySet Name="Users" EntityType="Model1.Store.Users" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Characters" EntityType="Model1.Store.Characters" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CharacterSheets" EntityType="Model1.Store.CharacterSheets" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Stats" EntityType="Model1.Store.Stats" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EquippedWeapons" EntityType="Model1.Store.EquippedWeapons" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Items" EntityType="Model1.Store.Items" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EquippedArmors" EntityType="Model1.Store.EquippedArmors" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Languages" EntityType="Model1.Store.Languages" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Talents" EntityType="Model1.Store.Talents" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ForcePowers" EntityType="Model1.Store.ForcePowers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Feats" EntityType="Model1.Store.Feats" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Skills" EntityType="Model1.Store.Skills" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Versions" EntityType="Model1.Store.Versions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CharacterSheets_EquippedWeapons" EntityType="Model1.Store.CharacterSheetsEquippedWeapons" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CharacterSheets_Languages" EntityType="Model1.Store.CharacterSheetsLanguages" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CharacterSheets_Talents" EntityType="Model1.Store.CharacterSheetsTalents" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CharacterSheets_Items" EntityType="Model1.Store.CharacterSheetsItems" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CharacterSheets_ForcePowers" EntityType="Model1.Store.CharacterSheetsForcePowers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Feats_CharacterSheets" EntityType="Model1.Store.FeatsCharacterSheets" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="CharactersCharacterSheets" Association="Model1.Store.CharactersCharacterSheets">
+      <End Role="Characters" EntitySet="Characters" />
+      <End Role="CharacterSheets" EntitySet="CharacterSheets" />
+    </AssociationSet>
+    <AssociationSet Name="CharacterSheetsStats" Association="Model1.Store.CharacterSheetsStats">
+      <End Role="CharacterSheets" EntitySet="CharacterSheets" />
+      <End Role="Stats" EntitySet="Stats" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CharacterSheets_EquippedWeapons_CharacterSheets" Association="Model1.Store.FK_CharacterSheetsEquippedWeapons_CharacterSheets">
+      <End Role="CharacterSheets" EntitySet="CharacterSheets" />
+      <End Role="CharacterSheetsEquippedWeapons" EntitySet="CharacterSheets_EquippedWeapons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CharacterSheets_EquippedWeapons_EquippedWeapons" Association="Model1.Store.FK_CharacterSheetsEquippedWeapons_EquippedWeapons">
+      <End Role="EquippedWeapons" EntitySet="EquippedWeapons" />
+      <End Role="CharacterSheetsEquippedWeapons" EntitySet="CharacterSheets_EquippedWeapons" />
+    </AssociationSet>
+    <AssociationSet Name="EquippedWeaponsItems" Association="Model1.Store.EquippedWeaponsItems">
+      <End Role="EquippedWeapons" EntitySet="EquippedWeapons" />
+      <End Role="Items" EntitySet="Items" />
+    </AssociationSet>
+    <AssociationSet Name="EquippedArmorCharacterSheets" Association="Model1.Store.EquippedArmorCharacterSheets">
+      <End Role="EquippedArmor" EntitySet="EquippedArmors" />
+      <End Role="CharacterSheets" EntitySet="CharacterSheets" />
+    </AssociationSet>
+    <AssociationSet Name="EquippedArmorItems" Association="Model1.Store.EquippedArmorItems">
+      <End Role="EquippedArmor" EntitySet="EquippedArmors" />
+      <End Role="Items" EntitySet="Items" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CharacterSheets_Languages_CharacterSheets" Association="Model1.Store.FK_CharacterSheetsLanguages_CharacterSheets">
+      <End Role="CharacterSheets" EntitySet="CharacterSheets" />
+      <End Role="CharacterSheetsLanguages" EntitySet="CharacterSheets_Languages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CharacterSheets_Languages_Languages" Association="Model1.Store.FK_CharacterSheetsLanguages_Languages">
+      <End Role="Languages" EntitySet="Languages" />
+      <End Role="CharacterSheetsLanguages" EntitySet="CharacterSheets_Languages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CharacterSheets_Talents_CharacterSheets" Association="Model1.Store.FK_CharacterSheetsTalents_CharacterSheets">
+      <End Role="CharacterSheets" EntitySet="CharacterSheets" />
+      <End Role="CharacterSheetsTalents" EntitySet="CharacterSheets_Talents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CharacterSheets_Talents_Talents" Association="Model1.Store.FK_CharacterSheetsTalents_Talents">
+      <End Role="Talents" EntitySet="Talents" />
+      <End Role="CharacterSheetsTalents" EntitySet="CharacterSheets_Talents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CharacterSheets_Items_CharacterSheets" Association="Model1.Store.FK_CharacterSheetsItems_CharacterSheets">
+      <End Role="CharacterSheets" EntitySet="CharacterSheets" />
+      <End Role="CharacterSheetsItems" EntitySet="CharacterSheets_Items" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CharacterSheets_Items_Items" Association="Model1.Store.FK_CharacterSheetsItems_Items">
+      <End Role="Items" EntitySet="Items" />
+      <End Role="CharacterSheetsItems" EntitySet="CharacterSheets_Items" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CharacterSheets_ForcePowers_CharacterSheets" Association="Model1.Store.FK_CharacterSheetsForcePowers_CharacterSheets">
+      <End Role="CharacterSheets" EntitySet="CharacterSheets" />
+      <End Role="CharacterSheetsForcePowers" EntitySet="CharacterSheets_ForcePowers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CharacterSheets_ForcePowers_ForcePowers" Association="Model1.Store.FK_CharacterSheetsForcePowers_ForcePowers">
+      <End Role="ForcePowers" EntitySet="ForcePowers" />
+      <End Role="CharacterSheetsForcePowers" EntitySet="CharacterSheets_ForcePowers" />
+    </AssociationSet>
+    <AssociationSet Name="CharacterSheetsSkills" Association="Model1.Store.CharacterSheetsSkills">
+      <End Role="CharacterSheets" EntitySet="CharacterSheets" />
+      <End Role="Skills" EntitySet="Skills" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Feats_CharacterSheets_Feats" Association="Model1.Store.FK_FeatsCharacterSheets_Feats">
+      <End Role="Feats" EntitySet="Feats" />
+      <End Role="FeatsCharacterSheets" EntitySet="Feats_CharacterSheets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Feats_CharacterSheets_CharacterSheets" Association="Model1.Store.FK_FeatsCharacterSheets_CharacterSheets">
+      <End Role="CharacterSheets" EntitySet="CharacterSheets" />
+      <End Role="FeatsCharacterSheets" EntitySet="Feats_CharacterSheets" />
+    </AssociationSet>
+    <AssociationSet Name="Users_Characters" Association="Model1.Store.UsersCharacters">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Characters" EntitySet="Characters" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Username" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IsDm" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Characters">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Class" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Species" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Level" Type="int" Nullable="false" />
+    <Property Name="Age" Type="int" Nullable="false" />
+    <Property Name="Gender" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Height" Type="int" Nullable="false" />
+    <Property Name="Weight" Type="int" Nullable="false" />
+    <Property Name="Background" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Destiny" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Credits" Type="decimal" Nullable="false" />
+    <Property Name="MaxHp" Type="int" Nullable="false" />
+    <Property Name="CurrentHp" Type="int" Nullable="false" />
+    <Property Name="Experience" Type="bigint" Nullable="false" />
+    <Property Name="PortraitPath" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CharacterSheet_Id" Type="int" Nullable="false" />
+    <Property Name="Users_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CharacterSheets">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Stats_Id" Type="int" Nullable="false" />
+    <Property Name="Skills_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Stats">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Strength" Type="int" Nullable="false" />
+    <Property Name="Dexterity" Type="int" Nullable="false" />
+    <Property Name="Constitution" Type="int" Nullable="false" />
+    <Property Name="Intelligence" Type="int" Nullable="false" />
+    <Property Name="Wisdom" Type="int" Nullable="false" />
+    <Property Name="Charisma" Type="int" Nullable="false" />
+    <Property Name="Fortitude" Type="int" Nullable="false" />
+    <Property Name="Reflex" Type="int" Nullable="false" />
+    <Property Name="Will" Type="int" Nullable="false" />
+    <Property Name="DmgThreshold" Type="int" Nullable="false" />
+    <Property Name="Speed" Type="int" Nullable="false" />
+    <Property Name="BaseAttack" Type="int" Nullable="false" />
+    <Property Name="Initiative" Type="int" Nullable="false" />
+    <Property Name="Perception" Type="int" Nullable="false" />
+    <Property Name="Grapple" Type="int" Nullable="false" />
+    <Property Name="ForcePoints" Type="int" Nullable="false" />
+    <Property Name="DestinyPoints" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EquippedWeapons">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AttackBonus" Type="int" Nullable="false" />
+    <Property Name="Damage" Type="int" Nullable="false" />
+    <Property Name="CritBonus" Type="int" Nullable="false" />
+    <Property Name="Notes" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Item_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Items">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Type" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Weight" Type="int" Nullable="false" />
+    <Property Name="Cost" Type="int" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="EquippedArmors">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CharacterSheet_Id" Type="int" Nullable="false" />
+    <Property Name="Item_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Languages">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Talents">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="ForcePowers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Feats">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="PageNumber" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Skills">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Acrobatics" Type="int" Nullable="false" />
+    <Property Name="Climb" Type="int" Nullable="false" />
+    <Property Name="Deception" Type="int" Nullable="false" />
+    <Property Name="Endurance" Type="int" Nullable="false" />
+    <Property Name="GatherInformation" Type="int" Nullable="false" />
+    <Property Name="Initiative" Type="int" Nullable="false" />
+    <Property Name="Jump" Type="int" Nullable="false" />
+    <Property Name="Knowledge" Type="int" Nullable="false" />
+    <Property Name="Mechanics" Type="int" Nullable="false" />
+    <Property Name="Perception" Type="int" Nullable="false" />
+    <Property Name="Persuasion" Type="int" Nullable="false" />
+    <Property Name="Pilot" Type="int" Nullable="false" />
+    <Property Name="Ride" Type="int" Nullable="false" />
+    <Property Name="Stealth" Type="int" Nullable="false" />
+    <Property Name="Survival" Type="int" Nullable="false" />
+    <Property Name="Swim" Type="int" Nullable="false" />
+    <Property Name="TreatInjury" Type="int" Nullable="false" />
+    <Property Name="UseComputer" Type="int" Nullable="false" />
+    <Property Name="UseTheForce" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Versions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Timestamp" Type="datetime" Nullable="false" />
+    <Property Name="Version" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CharacterSheetsEquippedWeapons">
+    <Key>
+      <PropertyRef Name="CharacterSheet_Id" />
+      <PropertyRef Name="EquippedWeapons_Id" />
+    </Key>
+    <Property Name="CharacterSheet_Id" Type="int" Nullable="false" />
+    <Property Name="EquippedWeapons_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CharacterSheetsLanguages">
+    <Key>
+      <PropertyRef Name="CharacterSheet_Id" />
+      <PropertyRef Name="Languages_Id" />
+    </Key>
+    <Property Name="CharacterSheet_Id" Type="int" Nullable="false" />
+    <Property Name="Languages_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CharacterSheetsTalents">
+    <Key>
+      <PropertyRef Name="CharacterSheet_Id" />
+      <PropertyRef Name="Talents_Id" />
+    </Key>
+    <Property Name="CharacterSheet_Id" Type="int" Nullable="false" />
+    <Property Name="Talents_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CharacterSheetsItems">
+    <Key>
+      <PropertyRef Name="CharacterSheet_Id" />
+      <PropertyRef Name="Items_Id" />
+    </Key>
+    <Property Name="CharacterSheet_Id" Type="int" Nullable="false" />
+    <Property Name="Items_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CharacterSheetsForcePowers">
+    <Key>
+      <PropertyRef Name="CharacterSheet_Id" />
+      <PropertyRef Name="ForcePowers_Id" />
+    </Key>
+    <Property Name="CharacterSheet_Id" Type="int" Nullable="false" />
+    <Property Name="ForcePowers_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FeatsCharacterSheets">
+    <Key>
+      <PropertyRef Name="Feat_Id" />
+      <PropertyRef Name="CharacterSheets_Id" />
+    </Key>
+    <Property Name="Feat_Id" Type="int" Nullable="false" />
+    <Property Name="CharacterSheets_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="CharactersCharacterSheets">
+    <End Role="Characters" Type="Model1.Store.Characters" Multiplicity="*" />
+    <End Role="CharacterSheets" Type="Model1.Store.CharacterSheets" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="CharacterSheets">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Characters">
+        <PropertyRef Name="CharacterSheet_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CharacterSheetsStats">
+    <End Role="CharacterSheets" Type="Model1.Store.CharacterSheets" Multiplicity="*" />
+    <End Role="Stats" Type="Model1.Store.Stats" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Stats">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CharacterSheets">
+        <PropertyRef Name="Stats_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EquippedWeaponsItems">
+    <End Role="EquippedWeapons" Type="Model1.Store.EquippedWeapons" Multiplicity="*" />
+    <End Role="Items" Type="Model1.Store.Items" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Items">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EquippedWeapons">
+        <PropertyRef Name="Item_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EquippedArmorCharacterSheets">
+    <End Role="EquippedArmor" Type="Model1.Store.EquippedArmors" Multiplicity="*" />
+    <End Role="CharacterSheets" Type="Model1.Store.CharacterSheets" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="CharacterSheets">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EquippedArmor">
+        <PropertyRef Name="CharacterSheet_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EquippedArmorItems">
+    <End Role="EquippedArmor" Type="Model1.Store.EquippedArmors" Multiplicity="*" />
+    <End Role="Items" Type="Model1.Store.Items" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Items">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EquippedArmor">
+        <PropertyRef Name="Item_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CharacterSheetsSkills">
+    <End Role="CharacterSheets" Type="Model1.Store.CharacterSheets" Multiplicity="*" />
+    <End Role="Skills" Type="Model1.Store.Skills" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Skills">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CharacterSheets">
+        <PropertyRef Name="Skills_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UsersCharacters">
+    <End Role="Users" Type="Model1.Store.Users" Multiplicity="1" />
+    <End Role="Characters" Type="Model1.Store.Characters" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Characters">
+        <PropertyRef Name="Users_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CharacterSheetsEquippedWeapons_CharacterSheets">
+    <End Role="CharacterSheets" Type="Model1.Store.CharacterSheets" Multiplicity="1" />
+    <End Role="CharacterSheetsEquippedWeapons" Type="Model1.Store.CharacterSheetsEquippedWeapons" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CharacterSheets">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CharacterSheetsEquippedWeapons">
+        <PropertyRef Name="CharacterSheet_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CharacterSheetsEquippedWeapons_EquippedWeapons">
+    <End Role="CharacterSheetsEquippedWeapons" Type="Model1.Store.CharacterSheetsEquippedWeapons" Multiplicity="*" />
+    <End Role="EquippedWeapons" Type="Model1.Store.EquippedWeapons" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="EquippedWeapons">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CharacterSheetsEquippedWeapons">
+        <PropertyRef Name="EquippedWeapons_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CharacterSheetsLanguages_CharacterSheets">
+    <End Role="CharacterSheets" Type="Model1.Store.CharacterSheets" Multiplicity="1" />
+    <End Role="CharacterSheetsLanguages" Type="Model1.Store.CharacterSheetsLanguages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CharacterSheets">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CharacterSheetsLanguages">
+        <PropertyRef Name="CharacterSheet_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CharacterSheetsLanguages_Languages">
+    <End Role="CharacterSheetsLanguages" Type="Model1.Store.CharacterSheetsLanguages" Multiplicity="*" />
+    <End Role="Languages" Type="Model1.Store.Languages" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Languages">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CharacterSheetsLanguages">
+        <PropertyRef Name="Languages_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CharacterSheetsTalents_CharacterSheets">
+    <End Role="CharacterSheets" Type="Model1.Store.CharacterSheets" Multiplicity="1" />
+    <End Role="CharacterSheetsTalents" Type="Model1.Store.CharacterSheetsTalents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CharacterSheets">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CharacterSheetsTalents">
+        <PropertyRef Name="CharacterSheet_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CharacterSheetsTalents_Talents">
+    <End Role="CharacterSheetsTalents" Type="Model1.Store.CharacterSheetsTalents" Multiplicity="*" />
+    <End Role="Talents" Type="Model1.Store.Talents" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Talents">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CharacterSheetsTalents">
+        <PropertyRef Name="Talents_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CharacterSheetsItems_CharacterSheets">
+    <End Role="CharacterSheets" Type="Model1.Store.CharacterSheets" Multiplicity="1" />
+    <End Role="CharacterSheetsItems" Type="Model1.Store.CharacterSheetsItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CharacterSheets">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CharacterSheetsItems">
+        <PropertyRef Name="CharacterSheet_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CharacterSheetsItems_Items">
+    <End Role="CharacterSheetsItems" Type="Model1.Store.CharacterSheetsItems" Multiplicity="*" />
+    <End Role="Items" Type="Model1.Store.Items" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Items">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CharacterSheetsItems">
+        <PropertyRef Name="Items_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CharacterSheetsForcePowers_CharacterSheets">
+    <End Role="CharacterSheets" Type="Model1.Store.CharacterSheets" Multiplicity="1" />
+    <End Role="CharacterSheetsForcePowers" Type="Model1.Store.CharacterSheetsForcePowers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CharacterSheets">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CharacterSheetsForcePowers">
+        <PropertyRef Name="CharacterSheet_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CharacterSheetsForcePowers_ForcePowers">
+    <End Role="CharacterSheetsForcePowers" Type="Model1.Store.CharacterSheetsForcePowers" Multiplicity="*" />
+    <End Role="ForcePowers" Type="Model1.Store.ForcePowers" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="ForcePowers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CharacterSheetsForcePowers">
+        <PropertyRef Name="ForcePowers_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FeatsCharacterSheets_Feats">
+    <End Role="Feats" Type="Model1.Store.Feats" Multiplicity="1" />
+    <End Role="FeatsCharacterSheets" Type="Model1.Store.FeatsCharacterSheets" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Feats">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FeatsCharacterSheets">
+        <PropertyRef Name="Feat_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FeatsCharacterSheets_CharacterSheets">
+    <End Role="FeatsCharacterSheets" Type="Model1.Store.FeatsCharacterSheets" Multiplicity="*" />
+    <End Role="CharacterSheets" Type="Model1.Store.CharacterSheets" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="CharacterSheets">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FeatsCharacterSheets">
+        <PropertyRef Name="CharacterSheets_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="Model1Container" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Users" EntityType="Model1.Users" />
+          <EntitySet Name="Characters" EntityType="Model1.Characters" />
+          <EntitySet Name="CharacterSheets" EntityType="Model1.CharacterSheets" />
+          <AssociationSet Name="CharactersCharacterSheets" Association="Model1.CharactersCharacterSheets">
+            <End Role="Characters" EntitySet="Characters" />
+            <End Role="CharacterSheets" EntitySet="CharacterSheets" />
+          </AssociationSet>
+          <EntitySet Name="Stats" EntityType="Model1.Stats" />
+          <AssociationSet Name="CharacterSheetsStats" Association="Model1.CharacterSheetsStats">
+            <End Role="CharacterSheets" EntitySet="CharacterSheets" />
+            <End Role="Stats" EntitySet="Stats" />
+          </AssociationSet>
+          <EntitySet Name="EquippedWeapons" EntityType="Model1.EquippedWeapons" />
+          <AssociationSet Name="CharacterSheets_EquippedWeapons" Association="Model1.CharacterSheetsEquippedWeapons">
+            <End Role="CharacterSheets" EntitySet="CharacterSheets" />
+            <End Role="EquippedWeapons" EntitySet="EquippedWeapons" />
+          </AssociationSet>
+          <EntitySet Name="Items" EntityType="Model1.Items" />
+          <AssociationSet Name="EquippedWeaponsItems" Association="Model1.EquippedWeaponsItems">
+            <End Role="EquippedWeapons" EntitySet="EquippedWeapons" />
+            <End Role="Items" EntitySet="Items" />
+          </AssociationSet>
+          <EntitySet Name="EquippedArmors" EntityType="Model1.EquippedArmor" />
+          <AssociationSet Name="EquippedArmorCharacterSheets" Association="Model1.EquippedArmorCharacterSheets">
+            <End Role="EquippedArmor" EntitySet="EquippedArmors" />
+            <End Role="CharacterSheets" EntitySet="CharacterSheets" />
+          </AssociationSet>
+          <AssociationSet Name="EquippedArmorItems" Association="Model1.EquippedArmorItems">
+            <End Role="EquippedArmor" EntitySet="EquippedArmors" />
+            <End Role="Items" EntitySet="Items" />
+          </AssociationSet>
+          <EntitySet Name="Languages" EntityType="Model1.Languages" />
+          <AssociationSet Name="CharacterSheets_Languages" Association="Model1.CharacterSheetsLanguages">
+            <End Role="CharacterSheets" EntitySet="CharacterSheets" />
+            <End Role="Languages" EntitySet="Languages" />
+          </AssociationSet>
+          <EntitySet Name="Talents" EntityType="Model1.Talents" />
+          <AssociationSet Name="CharacterSheets_Talents" Association="Model1.CharacterSheetsTalents">
+            <End Role="CharacterSheets" EntitySet="CharacterSheets" />
+            <End Role="Talents" EntitySet="Talents" />
+          </AssociationSet>
+          <AssociationSet Name="CharacterSheets_Items" Association="Model1.CharacterSheetsItems">
+            <End Role="CharacterSheets" EntitySet="CharacterSheets" />
+            <End Role="Items" EntitySet="Items" />
+          </AssociationSet>
+          <EntitySet Name="ForcePowers" EntityType="Model1.ForcePowers" />
+          <AssociationSet Name="CharacterSheets_ForcePowers" Association="Model1.CharacterSheetsForcePowers">
+            <End Role="CharacterSheets" EntitySet="CharacterSheets" />
+            <End Role="ForcePowers" EntitySet="ForcePowers" />
+          </AssociationSet>
+          <EntitySet Name="Feats" EntityType="Model1.Feats" />
+          <EntitySet Name="Skills" EntityType="Model1.Skills" />
+          <AssociationSet Name="CharacterSheetsSkills" Association="Model1.CharacterSheetsSkills">
+            <End Role="CharacterSheets" EntitySet="CharacterSheets" />
+            <End Role="Skills" EntitySet="Skills" />
+          </AssociationSet>
+          <AssociationSet Name="Feats_CharacterSheets" Association="Model1.FeatsCharacterSheets">
+            <End Role="Feats" EntitySet="Feats" />
+            <End Role="CharacterSheets" EntitySet="CharacterSheets" />
+          </AssociationSet>
+          <AssociationSet Name="Users_Characters" Association="Model1.UsersCharacters">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Characters" EntitySet="Characters" />
+          </AssociationSet>
+          <EntitySet Name="Versions" EntityType="Model1.Versions" />
+          </EntityContainer>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" Nullable="false" />
+          <Property Name="LastName" Type="String" Nullable="false" />
+          <Property Name="Username" Type="String" Nullable="false" />
+          <Property Name="Password" Type="String" Nullable="false" />
+          <Property Name="IsDm" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Characters" Relationship="Model1.UsersCharacters" FromRole="Users" ToRole="Characters" />
+        </EntityType>
+        <EntityType Name="Characters">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <Property Name="Class" Type="String" Nullable="false" />
+          <Property Name="Species" Type="String" Nullable="false" />
+          <Property Name="Level" Type="Int32" Nullable="false" />
+          <Property Name="Age" Type="Int32" Nullable="false" />
+          <Property Name="Gender" Type="String" Nullable="false" />
+          <Property Name="Height" Type="Int32" Nullable="false" />
+          <Property Name="Weight" Type="Int32" Nullable="false" />
+          <Property Name="Background" Type="String" Nullable="true" />
+          <Property Name="Destiny" Type="String" Nullable="true" />
+          <Property Name="Credits" Type="Decimal" Nullable="false" />
+          <Property Name="MaxHp" Type="Int32" Nullable="false" />
+          <Property Name="CurrentHp" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CharacterSheet" Relationship="Model1.CharactersCharacterSheets" FromRole="Characters" ToRole="CharacterSheets" />
+          <Property Name="Experience" Type="Int64" Nullable="false" />
+          <Property Name="PortraitPath" Type="String" Nullable="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Users" Relationship="Model1.UsersCharacters" FromRole="Characters" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="CharacterSheets">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Character" Relationship="Model1.CharactersCharacterSheets" FromRole="CharacterSheets" ToRole="Characters" />
+          <NavigationProperty Name="Stats" Relationship="Model1.CharacterSheetsStats" FromRole="CharacterSheets" ToRole="Stats" />
+          <NavigationProperty Name="EquippedWeapons" Relationship="Model1.CharacterSheetsEquippedWeapons" FromRole="CharacterSheets" ToRole="EquippedWeapons" />
+          <NavigationProperty Name="EquippedArmor" Relationship="Model1.EquippedArmorCharacterSheets" FromRole="CharacterSheets" ToRole="EquippedArmor" />
+          <NavigationProperty Name="Languages" Relationship="Model1.CharacterSheetsLanguages" FromRole="CharacterSheets" ToRole="Languages" />
+          <NavigationProperty Name="Talents" Relationship="Model1.CharacterSheetsTalents" FromRole="CharacterSheets" ToRole="Talents" />
+          <NavigationProperty Name="Items" Relationship="Model1.CharacterSheetsItems" FromRole="CharacterSheets" ToRole="Items" />
+          <NavigationProperty Name="ForcePowers" Relationship="Model1.CharacterSheetsForcePowers" FromRole="CharacterSheets" ToRole="ForcePowers" />
+          <NavigationProperty Name="Skills" Relationship="Model1.CharacterSheetsSkills" FromRole="CharacterSheets" ToRole="Skills" />
+          <NavigationProperty Name="Feat" Relationship="Model1.FeatsCharacterSheets" FromRole="CharacterSheets" ToRole="Feats" />
+        </EntityType>
+        <Association Name="CharactersCharacterSheets">
+          <End Type="Model1.Characters" Role="Characters" Multiplicity="1" />
+          <End Type="Model1.CharacterSheets" Role="CharacterSheets" Multiplicity="1" />
+        </Association>
+        <EntityType Name="Stats">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="CharacterSheet" Relationship="Model1.CharacterSheetsStats" FromRole="Stats" ToRole="CharacterSheets" />
+          <Property Name="Strength" Type="Int32" Nullable="false" />
+          <Property Name="Dexterity" Type="Int32" Nullable="false" />
+          <Property Name="Constitution" Type="Int32" Nullable="false" />
+          <Property Name="Intelligence" Type="Int32" Nullable="false" />
+          <Property Name="Wisdom" Type="Int32" Nullable="false" />
+          <Property Name="Charisma" Type="Int32" Nullable="false" />
+          <Property Name="Fortitude" Type="Int32" Nullable="false" />
+          <Property Name="Reflex" Type="Int32" Nullable="false" />
+          <Property Name="Will" Type="Int32" Nullable="false" />
+          <Property Name="DmgThreshold" Type="Int32" Nullable="false" />
+          <Property Name="Speed" Type="Int32" Nullable="false" />
+          <Property Name="BaseAttack" Type="Int32" Nullable="false" />
+          <Property Name="Initiative" Type="Int32" Nullable="false" />
+          <Property Name="Perception" Type="Int32" Nullable="false" />
+          <Property Name="Grapple" Type="Int32" Nullable="false" />
+          <Property Name="ForcePoints" Type="Int32" Nullable="false" />
+          <Property Name="DestinyPoints" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="CharacterSheetsStats">
+          <End Type="Model1.CharacterSheets" Role="CharacterSheets" Multiplicity="1" />
+          <End Type="Model1.Stats" Role="Stats" Multiplicity="1" />
+        </Association>
+        <EntityType Name="EquippedWeapons">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AttackBonus" Type="Int32" Nullable="false" />
+          <Property Name="Damage" Type="Int32" Nullable="false" />
+          <Property Name="CritBonus" Type="Int32" Nullable="false" />
+          <Property Name="Notes" Type="String" Nullable="true" />
+          <NavigationProperty Name="CharacterSheet" Relationship="Model1.CharacterSheetsEquippedWeapons" FromRole="EquippedWeapons" ToRole="CharacterSheets" />
+          <NavigationProperty Name="Item" Relationship="Model1.EquippedWeaponsItems" FromRole="EquippedWeapons" ToRole="Items" />
+        </EntityType>
+        <Association Name="CharacterSheetsEquippedWeapons">
+          <End Type="Model1.CharacterSheets" Role="CharacterSheets" Multiplicity="*" />
+          <End Type="Model1.EquippedWeapons" Role="EquippedWeapons" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Items">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <Property Name="Type" Type="String" Nullable="false" />
+          <Property Name="Weight" Type="Int32" Nullable="false" />
+          <Property Name="Cost" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="true" />
+          <NavigationProperty Name="EquippedWeapon" Relationship="Model1.EquippedWeaponsItems" FromRole="Items" ToRole="EquippedWeapons" />
+          <NavigationProperty Name="EquippedArmor" Relationship="Model1.EquippedArmorItems" FromRole="Items" ToRole="EquippedArmor" />
+          <NavigationProperty Name="CharacterSheet" Relationship="Model1.CharacterSheetsItems" FromRole="Items" ToRole="CharacterSheets" />
+        </EntityType>
+        <Association Name="EquippedWeaponsItems">
+          <End Type="Model1.EquippedWeapons" Role="EquippedWeapons" Multiplicity="1" />
+          <End Type="Model1.Items" Role="Items" Multiplicity="1" />
+        </Association>
+        <EntityType Name="EquippedArmor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="CharacterSheet" Relationship="Model1.EquippedArmorCharacterSheets" FromRole="EquippedArmor" ToRole="CharacterSheets" />
+          <NavigationProperty Name="Item" Relationship="Model1.EquippedArmorItems" FromRole="EquippedArmor" ToRole="Items" />
+        </EntityType>
+        <Association Name="EquippedArmorCharacterSheets">
+          <End Type="Model1.EquippedArmor" Role="EquippedArmor" Multiplicity="1" />
+          <End Type="Model1.CharacterSheets" Role="CharacterSheets" Multiplicity="1" />
+        </Association>
+        <Association Name="EquippedArmorItems">
+          <End Type="Model1.EquippedArmor" Role="EquippedArmor" Multiplicity="1" />
+          <End Type="Model1.Items" Role="Items" Multiplicity="1" />
+        </Association>
+        <EntityType Name="Languages">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <NavigationProperty Name="CharacterSheet" Relationship="Model1.CharacterSheetsLanguages" FromRole="Languages" ToRole="CharacterSheets" />
+        </EntityType>
+        <Association Name="CharacterSheetsLanguages">
+          <End Type="Model1.CharacterSheets" Role="CharacterSheets" Multiplicity="*" />
+          <End Type="Model1.Languages" Role="Languages" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Talents">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="true" />
+          <NavigationProperty Name="CharacterSheet" Relationship="Model1.CharacterSheetsTalents" FromRole="Talents" ToRole="CharacterSheets" />
+        </EntityType>
+        <Association Name="CharacterSheetsTalents">
+          <End Type="Model1.CharacterSheets" Role="CharacterSheets" Multiplicity="*" />
+          <End Type="Model1.Talents" Role="Talents" Multiplicity="*" />
+        </Association>
+        <Association Name="CharacterSheetsItems">
+          <End Type="Model1.CharacterSheets" Role="CharacterSheets" Multiplicity="*" />
+          <End Type="Model1.Items" Role="Items" Multiplicity="*" />
+        </Association>
+        <EntityType Name="ForcePowers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="true" />
+          <NavigationProperty Name="CharacterSheet" Relationship="Model1.CharacterSheetsForcePowers" FromRole="ForcePowers" ToRole="CharacterSheets" />
+        </EntityType>
+        <Association Name="CharacterSheetsForcePowers">
+          <End Type="Model1.CharacterSheets" Role="CharacterSheets" Multiplicity="*" />
+          <End Type="Model1.ForcePowers" Role="ForcePowers" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Feats">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="true" />
+          <Property Name="PageNumber" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CharacterSheets" Relationship="Model1.FeatsCharacterSheets" FromRole="Feats" ToRole="CharacterSheets" />
+        </EntityType>
+        <EntityType Name="Skills">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Acrobatics" Type="Int32" Nullable="false" />
+          <Property Name="Climb" Type="Int32" Nullable="false" />
+          <Property Name="Deception" Type="Int32" Nullable="false" />
+          <Property Name="Endurance" Type="Int32" Nullable="false" />
+          <Property Name="GatherInformation" Type="Int32" Nullable="false" />
+          <Property Name="Initiative" Type="Int32" Nullable="false" />
+          <Property Name="Jump" Type="Int32" Nullable="false" />
+          <Property Name="Knowledge" Type="Int32" Nullable="false" />
+          <Property Name="Mechanics" Type="Int32" Nullable="false" />
+          <Property Name="Perception" Type="Int32" Nullable="false" />
+          <Property Name="Persuasion" Type="Int32" Nullable="false" />
+          <Property Name="Pilot" Type="Int32" Nullable="false" />
+          <Property Name="Ride" Type="Int32" Nullable="false" />
+          <Property Name="Stealth" Type="Int32" Nullable="false" />
+          <Property Name="Survival" Type="Int32" Nullable="false" />
+          <Property Name="Swim" Type="Int32" Nullable="false" />
+          <Property Name="TreatInjury" Type="Int32" Nullable="false" />
+          <Property Name="UseComputer" Type="Int32" Nullable="false" />
+          <Property Name="UseTheForce" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CharacterSheet" Relationship="Model1.CharacterSheetsSkills" FromRole="Skills" ToRole="CharacterSheets" />
+        </EntityType>
+        <Association Name="CharacterSheetsSkills">
+          <End Type="Model1.CharacterSheets" Role="CharacterSheets" Multiplicity="1" />
+          <End Type="Model1.Skills" Role="Skills" Multiplicity="1" />
+        </Association>
+        <Association Name="FeatsCharacterSheets">
+          <End Type="Model1.Feats" Role="Feats" Multiplicity="*" />
+          <End Type="Model1.CharacterSheets" Role="CharacterSheets" Multiplicity="*" />
+        </Association>
+        <Association Name="UsersCharacters">
+          <End Type="Model1.Users" Role="Users" Multiplicity="1" />
+          <End Type="Model1.Characters" Role="Characters" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Versions">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Timestamp" Type="DateTime" Nullable="false" />
+          <Property Name="Version" Type="String" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Model1StoreContainer" CdmEntityContainer="Model1Container">
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Users)">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="IsDm" ColumnName="IsDm" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Characters">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Characters)">
+        <MappingFragment StoreEntitySet="Characters">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Class" ColumnName="Class" />
+          <ScalarProperty Name="Species" ColumnName="Species" />
+          <ScalarProperty Name="Level" ColumnName="Level" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Height" ColumnName="Height" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="Background" ColumnName="Background" />
+          <ScalarProperty Name="Destiny" ColumnName="Destiny" />
+          <ScalarProperty Name="Credits" ColumnName="Credits" />
+          <ScalarProperty Name="MaxHp" ColumnName="MaxHp" />
+          <ScalarProperty Name="CurrentHp" ColumnName="CurrentHp" />
+          <ScalarProperty Name="Experience" ColumnName="Experience" />
+          <ScalarProperty Name="PortraitPath" ColumnName="PortraitPath" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CharacterSheets">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.CharacterSheets)">
+        <MappingFragment StoreEntitySet="CharacterSheets">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Stats">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Stats)">
+        <MappingFragment StoreEntitySet="Stats">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Strength" ColumnName="Strength" />
+          <ScalarProperty Name="Dexterity" ColumnName="Dexterity" />
+          <ScalarProperty Name="Constitution" ColumnName="Constitution" />
+          <ScalarProperty Name="Intelligence" ColumnName="Intelligence" />
+          <ScalarProperty Name="Wisdom" ColumnName="Wisdom" />
+          <ScalarProperty Name="Charisma" ColumnName="Charisma" />
+          <ScalarProperty Name="Fortitude" ColumnName="Fortitude" />
+          <ScalarProperty Name="Reflex" ColumnName="Reflex" />
+          <ScalarProperty Name="Will" ColumnName="Will" />
+          <ScalarProperty Name="DmgThreshold" ColumnName="DmgThreshold" />
+          <ScalarProperty Name="Speed" ColumnName="Speed" />
+          <ScalarProperty Name="BaseAttack" ColumnName="BaseAttack" />
+          <ScalarProperty Name="Initiative" ColumnName="Initiative" />
+          <ScalarProperty Name="Perception" ColumnName="Perception" />
+          <ScalarProperty Name="Grapple" ColumnName="Grapple" />
+          <ScalarProperty Name="ForcePoints" ColumnName="ForcePoints" />
+          <ScalarProperty Name="DestinyPoints" ColumnName="DestinyPoints" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EquippedWeapons">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.EquippedWeapons)">
+        <MappingFragment StoreEntitySet="EquippedWeapons">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="AttackBonus" ColumnName="AttackBonus" />
+          <ScalarProperty Name="Damage" ColumnName="Damage" />
+          <ScalarProperty Name="CritBonus" ColumnName="CritBonus" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Items">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Items)">
+        <MappingFragment StoreEntitySet="Items">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EquippedArmors">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.EquippedArmor)">
+        <MappingFragment StoreEntitySet="EquippedArmors">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Languages">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Languages)">
+        <MappingFragment StoreEntitySet="Languages">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Talents">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Talents)">
+        <MappingFragment StoreEntitySet="Talents">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ForcePowers">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.ForcePowers)">
+        <MappingFragment StoreEntitySet="ForcePowers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Feats">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Feats)">
+        <MappingFragment StoreEntitySet="Feats">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="PageNumber" ColumnName="PageNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Skills">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Skills)">
+        <MappingFragment StoreEntitySet="Skills">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Acrobatics" ColumnName="Acrobatics" />
+          <ScalarProperty Name="Climb" ColumnName="Climb" />
+          <ScalarProperty Name="Deception" ColumnName="Deception" />
+          <ScalarProperty Name="Endurance" ColumnName="Endurance" />
+          <ScalarProperty Name="GatherInformation" ColumnName="GatherInformation" />
+          <ScalarProperty Name="Initiative" ColumnName="Initiative" />
+          <ScalarProperty Name="Jump" ColumnName="Jump" />
+          <ScalarProperty Name="Knowledge" ColumnName="Knowledge" />
+          <ScalarProperty Name="Mechanics" ColumnName="Mechanics" />
+          <ScalarProperty Name="Perception" ColumnName="Perception" />
+          <ScalarProperty Name="Persuasion" ColumnName="Persuasion" />
+          <ScalarProperty Name="Pilot" ColumnName="Pilot" />
+          <ScalarProperty Name="Ride" ColumnName="Ride" />
+          <ScalarProperty Name="Stealth" ColumnName="Stealth" />
+          <ScalarProperty Name="Survival" ColumnName="Survival" />
+          <ScalarProperty Name="Swim" ColumnName="Swim" />
+          <ScalarProperty Name="TreatInjury" ColumnName="TreatInjury" />
+          <ScalarProperty Name="UseComputer" ColumnName="UseComputer" />
+          <ScalarProperty Name="UseTheForce" ColumnName="UseTheForce" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Versions">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Versions)">
+        <MappingFragment StoreEntitySet="Versions">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="CharactersCharacterSheets" TypeName="Model1.CharactersCharacterSheets" StoreEntitySet="Characters">
+      <EndProperty Name="CharacterSheets">
+        <ScalarProperty Name="Id" ColumnName="CharacterSheet_Id" />
+      </EndProperty>
+      <EndProperty Name="Characters">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="CharacterSheetsStats" TypeName="Model1.CharacterSheetsStats" StoreEntitySet="CharacterSheets">
+      <EndProperty Name="Stats">
+        <ScalarProperty Name="Id" ColumnName="Stats_Id" />
+      </EndProperty>
+      <EndProperty Name="CharacterSheets">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="CharacterSheets_EquippedWeapons" TypeName="Model1.CharacterSheetsEquippedWeapons" StoreEntitySet="CharacterSheets_EquippedWeapons">
+      <EndProperty Name="CharacterSheets">
+        <ScalarProperty Name="Id" ColumnName="CharacterSheet_Id" />
+      </EndProperty>
+      <EndProperty Name="EquippedWeapons">
+        <ScalarProperty Name="Id" ColumnName="EquippedWeapons_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="EquippedWeaponsItems" TypeName="Model1.EquippedWeaponsItems" StoreEntitySet="EquippedWeapons">
+      <EndProperty Name="Items">
+        <ScalarProperty Name="Id" ColumnName="Item_Id" />
+      </EndProperty>
+      <EndProperty Name="EquippedWeapons">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="EquippedArmorCharacterSheets" TypeName="Model1.EquippedArmorCharacterSheets" StoreEntitySet="EquippedArmors">
+      <EndProperty Name="CharacterSheets">
+        <ScalarProperty Name="Id" ColumnName="CharacterSheet_Id" />
+      </EndProperty>
+      <EndProperty Name="EquippedArmor">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="EquippedArmorItems" TypeName="Model1.EquippedArmorItems" StoreEntitySet="EquippedArmors">
+      <EndProperty Name="Items">
+        <ScalarProperty Name="Id" ColumnName="Item_Id" />
+      </EndProperty>
+      <EndProperty Name="EquippedArmor">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="CharacterSheets_Languages" TypeName="Model1.CharacterSheetsLanguages" StoreEntitySet="CharacterSheets_Languages">
+      <EndProperty Name="CharacterSheets">
+        <ScalarProperty Name="Id" ColumnName="CharacterSheet_Id" />
+      </EndProperty>
+      <EndProperty Name="Languages">
+        <ScalarProperty Name="Id" ColumnName="Languages_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="CharacterSheets_Talents" TypeName="Model1.CharacterSheetsTalents" StoreEntitySet="CharacterSheets_Talents">
+      <EndProperty Name="CharacterSheets">
+        <ScalarProperty Name="Id" ColumnName="CharacterSheet_Id" />
+      </EndProperty>
+      <EndProperty Name="Talents">
+        <ScalarProperty Name="Id" ColumnName="Talents_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="CharacterSheets_Items" TypeName="Model1.CharacterSheetsItems" StoreEntitySet="CharacterSheets_Items">
+      <EndProperty Name="CharacterSheets">
+        <ScalarProperty Name="Id" ColumnName="CharacterSheet_Id" />
+      </EndProperty>
+      <EndProperty Name="Items">
+        <ScalarProperty Name="Id" ColumnName="Items_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="CharacterSheets_ForcePowers" TypeName="Model1.CharacterSheetsForcePowers" StoreEntitySet="CharacterSheets_ForcePowers">
+      <EndProperty Name="CharacterSheets">
+        <ScalarProperty Name="Id" ColumnName="CharacterSheet_Id" />
+      </EndProperty>
+      <EndProperty Name="ForcePowers">
+        <ScalarProperty Name="Id" ColumnName="ForcePowers_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="CharacterSheetsSkills" TypeName="Model1.CharacterSheetsSkills" StoreEntitySet="CharacterSheets">
+      <EndProperty Name="Skills">
+        <ScalarProperty Name="Id" ColumnName="Skills_Id" />
+      </EndProperty>
+      <EndProperty Name="CharacterSheets">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Feats_CharacterSheets" TypeName="Model1.FeatsCharacterSheets" StoreEntitySet="Feats_CharacterSheets">
+      <EndProperty Name="Feats">
+        <ScalarProperty Name="Id" ColumnName="Feat_Id" />
+      </EndProperty>
+      <EndProperty Name="CharacterSheets">
+        <ScalarProperty Name="Id" ColumnName="CharacterSheets_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Users_Characters" TypeName="Model1.UsersCharacters" StoreEntitySet="Characters">
+      <EndProperty Name="Users">
+        <ScalarProperty Name="Id" ColumnName="Users_Id" />
+      </EndProperty>
+      <EndProperty Name="Characters">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

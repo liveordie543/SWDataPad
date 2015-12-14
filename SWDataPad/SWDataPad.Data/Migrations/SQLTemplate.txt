@@ -1,0 +1,17 @@
+﻿BEGIN TRY
+	DECLARE @version INT
+	SET @version = 1
+
+	BEGIN TRANSACTION
+		IF NOT EXISTS (SELECT [Id] FROM [dbo].[Version] WHERE [Version] = @version)
+		BEGIN
+			-- Put SQL code here --
+		END
+	COMMIT
+END TRY
+BEGIN CATCH
+	ROLLBACK
+	DECLARE @err_msg NVARCHAR(MAX)
+	SET @err_msg = ERROR_MESSAGE() + '; Line #: ' + CAST(Error_Line() AS NVARCHAR) + '; Version number: ' + CAST(@version AS nvarchar)
+	RAISERROR (@err_msg, 12, 1);
+END CATCH

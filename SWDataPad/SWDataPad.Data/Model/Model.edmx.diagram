@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c0d817f20cb3475388fd166544b3faf4" Name="Diagram1" ZoomLevel="98" >
+        <EntityTypeShape EntityType="Model1.Users" Width="1.5" PointX="2.375" PointY="0.5" />
+        <EntityTypeShape EntityType="Model1.Characters" Width="1.5" PointX="4.25" PointY="0.5" />
+        <EntityTypeShape EntityType="Model1.CharacterSheets" Width="1.5" PointX="4.25" PointY="5.75" />
+        <AssociationConnector Association="Model1.CharactersCharacterSheets" />
+        <EntityTypeShape EntityType="Model1.Stats" Width="1.5" PointX="6.125" PointY="0.875" />
+        <AssociationConnector Association="Model1.CharacterSheetsStats" />
+        <EntityTypeShape EntityType="Model1.EquippedWeapons" Width="1.5" PointX="2.375" PointY="3.5" />
+        <AssociationConnector Association="Model1.CharacterSheetsEquippedWeapons" />
+        <EntityTypeShape EntityType="Model1.Items" Width="1.5" PointX="0.5" PointY="3.5" />
+        <AssociationConnector Association="Model1.EquippedWeaponsItems" />
+        <EntityTypeShape EntityType="Model1.EquippedArmor" Width="1.5" PointX="2.375" PointY="6.125" />
+        <AssociationConnector Association="Model1.EquippedArmorCharacterSheets" />
+        <AssociationConnector Association="Model1.EquippedArmorItems" />
+        <EntityTypeShape EntityType="Model1.Languages" Width="1.5" PointX="6.125" PointY="5.75" />
+        <AssociationConnector Association="Model1.CharacterSheetsLanguages" />
+        <EntityTypeShape EntityType="Model1.Talents" Width="1.5" PointX="6.125" PointY="7.625" />
+        <AssociationConnector Association="Model1.CharacterSheetsTalents" />
+        <AssociationConnector Association="Model1.CharacterSheetsItems" />
+        <EntityTypeShape EntityType="Model1.ForcePowers" Width="1.5" PointX="2.375" PointY="7.875" />
+        <AssociationConnector Association="Model1.CharacterSheetsForcePowers" ></AssociationConnector>
+        <EntityTypeShape EntityType="Model1.Feats" Width="1.5" PointX="4.25" PointY="9.375" />
+        <EntityTypeShape EntityType="Model1.Skills" Width="1.5" PointX="7.875" PointY="5.125" />
+        <AssociationConnector Association="Model1.CharacterSheetsSkills" />
+        <AssociationConnector Association="Model1.FeatsCharacterSheets" />
+        <AssociationConnector Association="Model1.UsersCharacters" />
+        <EntityTypeShape EntityType="Model1.Versions" Width="1.5" PointX="7.875" PointY="0.875" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
