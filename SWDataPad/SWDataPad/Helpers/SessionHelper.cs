@@ -12,12 +12,9 @@ namespace SWDataPad.Helpers
 
         private static T GetSessionVariable<T>(string key)
         {
-            HttpContext context = HttpContext.Current;
-            if (context != null && context.Session[key] != null)
-            {
-                return (T)context.Session[key];
-            }
-            return default(T);
+            return HttpContext.Current?.Session[key] != null
+                ? (T) HttpContext.Current.Session[key]
+                : default(T);
         }
 
         private static void SetSessionVariable(string key, object value)

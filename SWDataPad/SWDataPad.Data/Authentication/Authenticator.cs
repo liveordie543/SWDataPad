@@ -20,7 +20,7 @@ namespace SWDataPad.Data.Authentication
             return Convert.ToBase64String(hashBytes);
         }
 
-        public static bool IsLoginCorrect(string username, string password)
+        public static bool IsValidLogin(string username, string password)
         {
             bool isValid = true;
 
@@ -31,7 +31,8 @@ namespace SWDataPad.Data.Authentication
                 isValid = false;
             }
 
-            byte[] hashBytes = Convert.FromBase64String(user != null ? user.Password : "L/PFDxjaZuUeDSPh9JN0ZR09CU0EYg8UOPOdAqacTbZnPeI6");
+            const string stubPassword = "L/PFDxjaZuUeDSPh9JN0ZR09CU0EYg8UOPOdAqacTbZnPeI6";
+            byte[] hashBytes = Convert.FromBase64String(user != null ? user.Password : stubPassword);
             byte[] salt = new byte[16];
             Array.Copy(hashBytes, 0, salt, 0, 16);
 

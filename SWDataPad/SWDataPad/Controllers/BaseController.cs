@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Web;
 using System.Web.Mvc;
 using SWDataPad.Data.Repositories;
+using Microsoft.Owin.Security;
+using SWDataPad.Data.Entities;
 
 namespace SWDataPad.Controllers
 {
@@ -22,6 +20,21 @@ namespace SWDataPad.Controllers
         public CharacterRepository CharacterRepository
         {
             get { return _characterRepository ?? (_characterRepository = new CharacterRepository()); }
+        }
+
+        public IAuthenticationManager OwinAuthManager
+        {
+            get { return HttpContext.GetOwinContext().Authentication; }
+        }
+
+        public User CurrentUser
+        {
+            get
+            {
+                return string.IsNullOrEmpty(User.Identity.Name)
+                    ? null
+                    : UserRepository.SelectSingle(u => u.Username == User.Identity.Name);
+            }
         }
     }
 }

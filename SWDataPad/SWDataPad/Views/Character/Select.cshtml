@@ -1,5 +1,4 @@
 ﻿@using GridMvc.Html
-@using SWDataPad.Data.Entities
 @model IEnumerable<SWDataPad.Data.Entities.Character>
 
 @{
@@ -7,12 +6,13 @@
 }
 
 <div class="blank_page">
-    <div class="title_center_area_2">
+    <div class="character_select_title">
         Character Select
         <a class="sign_out_no_char" href="@Url.Action("LogOut", "Login")">Sign Out</a>
     </div>
     <div class="character_select_area">
         <input class="create_new_char_btn" type="button" value="Create New" onclick="window.location.href = '@Url.Action("Create")';"/>
+        @* TODO: Use Bootstrap instead *@
         @Html.Grid(Model).Columns(columns =>
         {
             columns.Add(c => c.Name).Titled("Name").ThenSortBy(c => c.Name).SetWidth("24%");

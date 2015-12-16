@@ -1,0 +1,120 @@
+﻿/*
+    Viewport Resolution: 640x360
+    Common Devices: Samsung Galaxy S3, S4, S5
+*/
+/*#region Variables*/
+/*#endregion Variables*/
+/*#region Generic*/
+html,
+body {
+  height: 100%;
+}
+td {
+  border: 1px solid #1b97d5;
+}
+/* Set padding to keep content from hitting the edges */
+.body-content {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+  max-width: 280px;
+}
+input {
+  background-color: #000116;
+  color: #1b97d5;
+  border-color: #1b97d5;
+  -ms-border-radius: 8px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+.blank_page {
+  color: #1b97d5;
+  height: 100%;
+  background-image: url("Backgrounds/Blank_Page.jpg");
+  background-repeat: no-repeat;
+  background-position: left top;
+}
+/*#endregion Generic*/
+/*#region Login*/
+.login_title {
+  color: #b0b51b;
+  margin-left: 319px;
+  position: relative;
+  top: 41px;
+  font-weight: bold;
+}
+.login_area {
+  margin-left: 174px;
+  margin-top: 110px;
+}
+.login_password_area {
+  margin-top: 5px;
+  margin-left: 3px;
+}
+.login_button_area {
+  margin-top: 5px;
+  margin-left: 75px;
+}
+.login_submit_button {
+  margin-left: 47px;
+}
+.register_area {
+  margin-left: 153px;
+  margin-top: 85px;
+}
+/*#endregion Login*/
+/*#region Character*/
+.character_select_title {
+  color: #b0b51b;
+  margin-left: 80px;
+  position: relative;
+  top: 41px;
+  font-weight: bold;
+}
+.sign_out_no_char {
+  margin-left: 295px;
+}
+.character_select_area {
+  width: 525px;
+  height: 290px;
+  margin-left: 61px;
+  margin-top: 55px;
+  font-size: 12px;
+}
+.create_new_char_btn {
+  position: absolute;
+  margin-left: 443px;
+  margin-top: 7px;
+  z-index: 1;
+}
+.create_char_title {
+  color: #b0b51b;
+  margin-left: 285px;
+  position: relative;
+  top: 41px;
+  font-weight: bold;
+}
+.create_char_area {
+  margin-left: 55px;
+  margin-top: 60px;
+  width: 550px;
+}
+.create_char_area input[type="text"] {
+  width: 160px;
+}
+.create_char_area .cell1 {
+  width: 35%;
+  float: left;
+  height: 100%;
+  margin-bottom: 6px;
+}
+.create_char_area .cell2 {
+  width: 65%;
+  float: right;
+  margin-bottom: 5px;
+}
+/*#endregion Character*/

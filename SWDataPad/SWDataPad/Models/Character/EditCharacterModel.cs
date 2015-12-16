@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.Linq;
 using SWDataPad.Data.Entities;
 
 namespace SWDataPad.Models.Character
@@ -40,7 +39,7 @@ namespace SWDataPad.Models.Character
 
         public override Data.Entities.Character ToCharacterEntity(User user)
         {
-            return user.Characters.Any(c => c.Id == Id) ? new Data.Entities.Character
+            return new Data.Entities.Character
             {
                 Id = Id,
                 Name = Name,
@@ -59,7 +58,7 @@ namespace SWDataPad.Models.Character
                 Experience = Experience,
                 CharacterSheet_Id = CharacterSheetId,
                 Users_Id = user.Id
-            } : null;
+            };
         }
     }
 }

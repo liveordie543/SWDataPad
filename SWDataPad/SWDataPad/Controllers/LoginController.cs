@@ -1,5 +1,4 @@
 ﻿using System.Security.Claims;
-using System.Web;
 using SWDataPad.Models.Login;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
@@ -19,7 +18,7 @@ namespace SWDataPad.Controllers
         [HttpPost]
         public ActionResult Login(LoginModel model)
         {
-            if (ModelState.IsValid && Authenticator.IsLoginCorrect(model.Username, model.Password))
+            if (ModelState.IsValid && Authenticator.IsValidLogin(model.Username, model.Password))
             {
                 AuthenticateUser(model.Username);
                 return RedirectToAction("Select", "Character");
@@ -27,9 +26,10 @@ namespace SWDataPad.Controllers
             return View(model);
         }
 
+        [HttpGet]
         public ActionResult LogOut()
         {
-            HttpContext.GetOwinContext().Authentication.SignOut(DefaultAuthenticationTypes.ApplicationCookie, DefaultAuthenticationTypes.ExternalCookie);
+            OwinAuthManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie, DefaultAuthenticationTypes.ExternalCookie);
             return RedirectToAction("Login");
         }
 
@@ -55,7 +55,7 @@ namespace SWDataPad.Controllers
             Claim[] claims = {new Claim(ClaimTypes.Name, username) };
             ClaimsIdentity identity = new ClaimsIdentity(claims, DefaultAuthenticationTypes.ApplicationCookie);
             AuthenticationProperties properties = new AuthenticationProperties {IsPersistent = false};
-            HttpContext.GetOwinContext().Authentication.SignIn(properties, identity);
+            OwinAuthManager.SignIn(properties, identity);
         }
     }
 }

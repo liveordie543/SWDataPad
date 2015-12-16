@@ -12,8 +12,7 @@ namespace SWDataPad.Controllers
         [HttpGet]
         public ActionResult Select()
         {
-            User user = UserRepository.SelectSingle(u => u.Username == User.Identity.Name);
-            return View(user.Characters);
+            return View(CurrentUser.Characters);
         }
 
         [HttpGet]
@@ -27,8 +26,7 @@ namespace SWDataPad.Controllers
         {
             if (ModelState.IsValid)
             {
-                User user = UserRepository.SelectSingle(u => u.Username == User.Identity.Name);
-                CharacterRepository.Create(model.ToCharacterEntity(user));
+                CharacterRepository.Create(model.ToCharacterEntity(CurrentUser));
                 return RedirectToAction("Select");
             }
             return View(model);
@@ -37,10 +35,10 @@ namespace SWDataPad.Controllers
         [HttpGet]
         public ActionResult Activate(int characterId)
         {
-            if (UserRepository.SelectSingle(u => u.Username == User.Identity.Name).Characters.Any(c => c.Id == characterId))
+            if (CurrentUser.Characters.Any(c => c.Id == characterId))
             {
                 SessionHelper.ActiveCharacterId = characterId;
-                return new EmptyResult();
+                //return new EmptyResult();
             }
             return RedirectToAction("Select");
         }
@@ -48,17 +46,16 @@ namespace SWDataPad.Controllers
         [HttpGet]
         public ActionResult Edit(int characterId)
         {
-            Character character = UserRepository.SelectSingle(u => u.Username == User.Identity.Name).Characters.Single(c => c.Id == characterId);
+            Character character = CurrentUser.Characters.Single(c => c.Id == characterId);
             return View(new EditCharacterModel(character));
         }
 
         [HttpPost]
         public ActionResult Edit(EditCharacterModel model)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && CurrentUser.Characters.Any(c => c.Id == model.Id))
             {
-                User user = UserRepository.SelectSingle(u => u.Username == User.Identity.Name);
-                CharacterRepository.Update(model.ToCharacterEntity(user));
+                CharacterRepository.Update(model.ToCharacterEntity(CurrentUser));
                 return RedirectToAction("Select");
             }
             return View(model);
@@ -67,7 +64,10 @@ namespace SWDataPad.Controllers
         [HttpGet]
         public ActionResult Delete(int characterId)
         {
-            CharacterRepository.DeleteById(characterId);
+            if (CurrentUser.Characters.Any(c => c.Id == characterId))
+            {
+                CharacterRepository.DeleteById(characterId);
+            }     
             return RedirectToAction("Select");
         }
     }

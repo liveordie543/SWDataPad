@@ -13,8 +13,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RPGDataPad</RootNamespace>
-    <AssemblyName>RPGDataPad</AssemblyName>
+    <RootNamespace>SWDataPad</RootNamespace>
+    <AssemblyName>SWDataPad</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -152,17 +152,27 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Backgrounds\Blank_Page.jpg" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\Gridmvc.css" />
-    <Content Include="Content\jquery.jscrollpane.css" />
-    <Content Include="Content\Site_GalaxyS45.css" />
+    <Content Include="Content\CSS\bootstrap.css" />
+    <Content Include="Content\CSS\bootstrap.min.css" />
+    <Content Include="Content\CSS\Gridmvc.css" />
+    <Content Include="Content\CSS\jquery.jscrollpane.css" />
+    <Content Include="Content\CSS\Site\Site_640_360.css">
+      <DependentUpon>Site_640_360.less</DependentUpon>
+    </Content>
+    <Content Include="Content\CSS\Site\Site_640_360.min.css">
+      <DependentUpon>Site_640_360.css</DependentUpon>
+    </Content>
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Migrations\1.sql" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Grid.mvc.readme" />
+    <Content Include="Content\CSS\Site\Site_640_360.less" />
+    <None Include="compilerconfig.json" />
+    <Content Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </Content>
     <None Include="Properties\PublishProfiles\t.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\gridmvc.js" />

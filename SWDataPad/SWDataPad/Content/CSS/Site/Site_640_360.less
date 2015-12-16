@@ -1,4 +1,17 @@
-﻿html, body {
+﻿/*
+    Viewport Resolution: 640x360
+    Common Devices: Samsung Galaxy S3, S4, S5
+*/
+
+/*#region Variables*/
+
+@titleTextColor: rgb(176, 181, 27);
+
+/*#endregion Variables*/
+
+/*#region Generic*/
+
+html, body {
     height:100%;
 }
 
@@ -36,9 +49,35 @@ input {
     background-position: left top;
 }
 
+/*#endregion Generic*/
+
+/*#region Login*/
+
+.login_title {
+    color: @titleTextColor;
+    margin-left: 319px;
+    position: relative;
+    top: 41px;
+    font-weight: bold;
+}
+
 .login_area {
     margin-left: 174px;
     margin-top: 110px;
+}
+
+.login_password_area {
+    margin-top: 5px;
+    margin-left: 3px;
+}
+
+.login_button_area {
+    margin-top: 5px;
+    margin-left: 75px;
+}
+
+.login_submit_button {
+    margin-left: 47px;
 }
 
 .register_area {
@@ -46,20 +85,20 @@ input {
     margin-top: 85px;
 }
 
-.title_center_area {
-    color: rgb(176, 181, 27);
-    margin-left: 319px;
-    position: relative;
-    top: 41px;
-    font-weight: bold;
-}
+/*#endregion Login*/
 
-.title_center_area_2 {
+/*#region Character*/
+
+.character_select_title {
     color: rgb(176, 181, 27);
     margin-left: 80px;
     position: relative;
     top: 41px;
     font-weight: bold;
+}
+
+.sign_out_no_char {
+    margin-left: 295px;
 }
 
 .character_select_area {
@@ -77,18 +116,12 @@ input {
     z-index: 1;
 }
 
-.login_password_area {
-    margin-top: 5px;
-    margin-left: 3px;
-}
-
-.login_button_area {
-    margin-top: 5px;
-    margin-left: 75px;
-}
-
-.login_submit_button {
-    margin-left: 47px;
+.create_char_title {
+    color: rgb(176, 181, 27);
+    margin-left: 285px;
+    position: relative;
+    top: 41px;
+    font-weight: bold;
 }
 
 .create_char_area {
@@ -114,14 +147,4 @@ input {
         margin-bottom: 5px;
     }
 
-.create_char_title {
-    color: rgb(176, 181, 27);
-    margin-left: 285px;
-    position: relative;
-    top: 41px;
-    font-weight: bold;
-}
-
-.sign_out_no_char {
-    margin-left: 295px;
-}
+/*#endregion Character*/
