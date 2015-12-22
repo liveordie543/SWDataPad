@@ -2,42 +2,41 @@
 
 @{
     ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_BlankLayout.cshtml";
 }
 
-<div class="blank_page">
-    <div class="login_title">
-        Register
-    </div>
-    <div class="register_area">
-        @using (Html.BeginForm())
-        {
-            <div>
-                @Html.LabelFor(model => model.Username)
-                @Html.TextBoxFor(model => model.Username, new { style = "margin-left:62px" })
-                @Html.ValidationMessageFor(model => model.Username)
-            </div>
-            <div style="margin-top:5px; margin-left: 1px">
-                @Html.LabelFor(model => model.Password)
-                @Html.PasswordFor(model => model.Password, new { style = "margin-left:64px" })
-                @Html.ValidationMessageFor(model => model.Password)
-            </div>
-            <div style="margin-top:5px; margin-left: 1px">
-                @Html.LabelFor(model => model.ConfirmPassword)
-                @Html.PasswordFor(model => model.ConfirmPassword, new { style = "margin-left:5px" })
-            </div>
-            <div style="margin-top:5px; margin-left: 1px">
-                @Html.LabelFor(model => model.FirstName)
-                @Html.TextBoxFor(model => model.FirstName, new { style = "margin-left:57px" })
-                @Html.ValidationMessageFor(model => model.FirstName)
-            </div>
-            <div style="margin-top:5px; margin-left: 1px">
-                @Html.LabelFor(model => model.LastName)
-                @Html.TextBoxFor(model => model.LastName, new { style = "margin-left:61px" })
-                @Html.ValidationMessageFor(model => model.LastName)
-            </div>
-            <div style="margin-top:10px;margin-left:252px">
-                <input type="submit" value="Register" />
-            </div>
-        }
-    </div>
+<div class="login_title">
+    Register
+</div>
+<div class="register_area">
+    @using (Html.BeginForm())
+    {
+        <div>
+            @Html.LabelFor(model => model.Username)
+            @Html.TextBoxFor(model => model.Username, new { style = "margin-left:62px" })
+            @Html.ValidationMessageFor(model => model.Username)
+        </div>
+        <div style="margin-top:5px; margin-left: 1px">
+            @Html.LabelFor(model => model.Password)
+            @Html.PasswordFor(model => model.Password, new { style = "margin-left:64px" })
+            @Html.ValidationMessageFor(model => model.Password)
+        </div>
+        <div style="margin-top:5px; margin-left: 1px">
+            @Html.LabelFor(model => model.ConfirmPassword)
+            @Html.PasswordFor(model => model.ConfirmPassword, new { style = "margin-left:5px" })
+        </div>
+        <div style="margin-top:5px; margin-left: 1px">
+            @Html.LabelFor(model => model.FirstName)
+            @Html.TextBoxFor(model => model.FirstName, new { style = "margin-left:57px" })
+            @Html.ValidationMessageFor(model => model.FirstName)
+        </div>
+        <div style="margin-top:5px; margin-left: 1px">
+            @Html.LabelFor(model => model.LastName)
+            @Html.TextBoxFor(model => model.LastName, new { style = "margin-left:61px" })
+            @Html.ValidationMessageFor(model => model.LastName)
+        </div>
+        <div style="margin-top:10px;margin-left:252px">
+            <input type="submit" value="Register" />
+        </div>
+    }
 </div>

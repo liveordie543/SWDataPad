@@ -34,22 +34,31 @@ input {
 .blank_page {
   color: #1b97d5;
   height: 100%;
-  background-image: url("Backgrounds/Blank_Page.jpg");
+  background-image: url("../../Backgrounds/Blank/Blank_640_360.png");
   background-repeat: no-repeat;
   background-position: left top;
+  width: 640px;
+  height: 360px;
+}
+.blank_panel {
+  width: 605px;
+  height: 355px;
+  padding-left: 35px;
+  padding-top: 5px;
 }
 /*#endregion Generic*/
 /*#region Login*/
 .login_title {
   color: #b0b51b;
-  margin-left: 319px;
-  position: relative;
-  top: 41px;
   font-weight: bold;
+  width: 100%;
+  text-align: center;
+  padding-top: 38px;
+  padding-left: 50px;
 }
 .login_area {
-  margin-left: 174px;
-  margin-top: 110px;
+  padding-left: 140px;
+  padding-top: 65px;
 }
 .login_password_area {
   margin-top: 5px;
@@ -63,45 +72,44 @@ input {
   margin-left: 47px;
 }
 .register_area {
-  margin-left: 153px;
-  margin-top: 85px;
+  padding-left: 100px;
+  padding-top: 40px;
 }
 /*#endregion Login*/
 /*#region Character*/
 .character_select_title {
   color: #b0b51b;
-  margin-left: 80px;
-  position: relative;
-  top: 41px;
+  padding-left: 36px;
+  padding-top: 38px;
   font-weight: bold;
 }
 .sign_out_no_char {
-  margin-left: 295px;
+  float: right;
+  padding-right: 34px;
 }
 .character_select_area {
-  width: 525px;
+  width: 557px;
   height: 290px;
-  margin-left: 61px;
-  margin-top: 55px;
+  margin-left: 7px;
   font-size: 12px;
+  margin-top: 5px;
 }
 .create_new_char_btn {
   position: absolute;
-  margin-left: 443px;
+  margin-left: 475px;
   margin-top: 7px;
   z-index: 1;
 }
 .create_char_title {
   color: #b0b51b;
-  margin-left: 285px;
-  position: relative;
-  top: 41px;
   font-weight: bold;
+  padding-top: 38px;
+  padding-left: 36px;
 }
 .create_char_area {
-  margin-left: 55px;
-  margin-top: 60px;
-  width: 550px;
+  margin-left: 10px;
+  margin-top: 20px;
+  width: 100%;
 }
 .create_char_area input[type="text"] {
   width: 160px;
@@ -116,5 +124,10 @@ input {
   width: 65%;
   float: right;
   margin-bottom: 5px;
+}
+.create_char_btn {
+  margin-top: 3px;
+  margin-right: 25px;
+  float: right;
 }
 /*#endregion Character*/
