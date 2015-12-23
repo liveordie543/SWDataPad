@@ -10,6 +10,12 @@ namespace SWDataPad.Helpers
             set { SetSessionVariable("ActiveCharacterId", value); }
         }
 
+        public static string ActiveDashboardPage
+        {
+            get { return GetSessionVariable<string>("ActiveDashboardPage"); }
+            set { SetSessionVariable("ActiveDashboardPage", value); }
+        }
+
         private static T GetSessionVariable<T>(string key)
         {
             return HttpContext.Current?.Session[key] != null

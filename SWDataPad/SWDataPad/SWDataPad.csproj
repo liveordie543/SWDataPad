@@ -238,7 +238,7 @@
     <Content Include="Views\Shared\_GridPager.cshtml" />
     <Content Include="Views\Shared\_Grid.cshtml" />
     <Content Include="Views\Character\Edit.cshtml" />
-    <Content Include="Views\Shared\_BlankLayout.cshtml" />
+    <Content Include="Views\Character\Dashboard.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

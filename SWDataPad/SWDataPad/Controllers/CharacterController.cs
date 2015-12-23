@@ -70,5 +70,18 @@ namespace SWDataPad.Controllers
             }     
             return RedirectToAction("Select");
         }
+
+        [HttpGet]
+        public ActionResult Dashboard()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult SetActiveDashboardPage(string page)
+        {
+            SessionHelper.ActiveDashboardPage = page;
+            return Json(true);
+        }
     }
 }

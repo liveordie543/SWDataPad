@@ -1,0 +1,46 @@
+﻿@using SWDataPad.Helpers
+
+@{
+    SessionHelper.ActiveDashboardPage = String.IsNullOrEmpty(SessionHelper.ActiveDashboardPage) ? "equip" : SessionHelper.ActiveDashboardPage;
+}
+
+<div class="icon_panel">
+    <img id="equipOn" class="dash_icon" src="~/Content/Backgrounds/Icons/Equip_Icon_Active.png"/>
+    <a id="equip" class="dash_icon inactive"><img src="~/Content/Backgrounds/Icons/Equip_Icon_Inactive.png"/></a>
+    <img id="invOn" class="dash_icon" src="~/Content/Backgrounds/Icons/Inventory_Icon_Active.png"/>
+    <a id="inv" class="dash_icon inactive"><img src="~/Content/Backgrounds/Icons/Inventory_Icon_Inactive.png"/></a>
+    <img id="charShtOn" class="dash_icon" src="~/Content/Backgrounds/Icons/Char_Sheet_Icon_Active.png"/>
+    <a id="charSht" class="dash_icon inactive"><img src="~/Content/Backgrounds/Icons/Char_Sheet_Icon_Inactive.png"/></a>
+    <img id="skillFeatsOn" class="dash_icon" src="~/Content/Backgrounds/Icons/Skills_Feats_Icon_Active.png"/>
+    <a id="skillFeats" class="dash_icon inactive"><img src="~/Content/Backgrounds/Icons/Skills_Feats_Icon_Inactive.png"/></a>
+    <img id="chatOn" class="dash_icon" src="~/Content/Backgrounds/Icons/Chat_Icon_Active.png"/>
+    <a id="chat" class="dash_icon inactive"><img src="~/Content/Backgrounds/Icons/Chat_Icon_Inactive.png"/></a>
+    <img id="journalOn" class="dash_icon" src="~/Content/Backgrounds/Icons/Journal_Icon_Active.png"/>
+    <a id="journal" class="dash_icon inactive"><img src="~/Content/Backgrounds/Icons/Journal_Icon_Inactive.png"/></a>
+    <img id="mapOn" class="dash_icon" src="~/Content/Backgrounds/Icons/Map_Icon_Active.png"/>
+    <a id="map" class="dash_icon inactive"><img src="~/Content/Backgrounds/Icons/Map_Icon_Inactive.png"/></a>
+    <img id="settingsOn" class="dash_icon" src="~/Content/Backgrounds/Icons/Settings_Icon_Active.png"/>
+    <a id="settings" class="dash_icon inactive"><img src="~/Content/Backgrounds/Icons/Settings_Icon_Inactive.png"/></a>
+</div>
+
+<script type="text/javascript">
+    var activeDashboardPage = '@SessionHelper.ActiveDashboardPage';
+
+    function toggleActiveIcon(newPage) {
+        $('#' + activeDashboardPage).css('display', 'inline');
+        $('#' + activeDashboardPage + 'On').css('display', 'none');
+        activeDashboardPage = newPage;
+        $('#' + activeDashboardPage).css('display', 'none');
+        $('#' + activeDashboardPage + 'On').css('display', 'inline');
+        $.post('@Url.Action("SetActiveDashboardPage")', { page: activeDashboardPage });
+    }
+
+    $('.dash_icon.inactive').click(function () {
+        toggleActiveIcon($(this).attr("id"));
+    });
+
+    $(document).ready(function () {
+        $('.dash_icon.inactive').css('display', 'inline');
+        toggleActiveIcon(activeDashboardPage);
+    });
+</script>
