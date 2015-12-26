@@ -23,24 +23,51 @@
     <a id="settings" class="dash_icon inactive"><img src="~/Content/Backgrounds/Icons/Settings_Icon_Inactive.png"/></a>
 </div>
 
+<div class="dash_title">
+    <div id="titleText"></div>
+    <div id="signOutArea">
+        <a class="change_char" href="@Url.Action("Select", "Character")">Change Character</a> | <a class="sign_out_char" href="@Url.Action("LogOut", "Login")">Sign Out</a>
+    </div>
+</div>
+
+<div id="equipPage" class="dash_page" TitleText="Equip">
+</div>
+<div id="invPage" class="dash_page" TitleText="Inventory">
+</div>
+<div id="charShtPage" class="dash_page" TitleText="Character">
+</div>
+<div id="skillFeatsPage" class="dash_page" TitleText="Skills & Feats">
+</div>
+<div id="chatPage" class="dash_page" TitleText="Messages">
+</div>
+<div id="journalPage" class="dash_page" TitleText="Journal">
+</div>
+<div id="mapPage" class="dash_page" TitleText="Map">
+</div>
+<div id="settingsPage" class="dash_page" TitleText="Settings">
+</div>
+
 <script type="text/javascript">
     var activeDashboardPage = '@SessionHelper.ActiveDashboardPage';
 
-    function toggleActiveIcon(newPage) {
+    function toggleActivePage(newPage) {
         $('#' + activeDashboardPage).css('display', 'inline');
         $('#' + activeDashboardPage + 'On').css('display', 'none');
+        $('#' + activeDashboardPage + 'Page').css('display', 'none');
         activeDashboardPage = newPage;
         $('#' + activeDashboardPage).css('display', 'none');
         $('#' + activeDashboardPage + 'On').css('display', 'inline');
+        $('#' + activeDashboardPage + 'Page').css('display', 'inline');
+        $('#titleText').text($('#' + activeDashboardPage + 'Page').attr('TitleText'));
         $.post('@Url.Action("SetActiveDashboardPage")', { page: activeDashboardPage });
     }
 
     $('.dash_icon.inactive').click(function () {
-        toggleActiveIcon($(this).attr("id"));
+        toggleActivePage($(this).attr("id"));
     });
 
     $(document).ready(function () {
         $('.dash_icon.inactive').css('display', 'inline');
-        toggleActiveIcon(activeDashboardPage);
+        toggleActivePage(activeDashboardPage);
     });
 </script>

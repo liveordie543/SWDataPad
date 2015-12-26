@@ -6,8 +6,8 @@
     <ProjectGuid>{004F04E5-056C-4326-A61C-F8D7D7DA8021}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RPGDataPad.Tests</RootNamespace>
-    <AssemblyName>RPGDataPad.Tests</AssemblyName>
+    <RootNamespace>SWDataPad.Tests</RootNamespace>
+    <AssemblyName>SWDataPad.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>

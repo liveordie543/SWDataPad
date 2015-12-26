@@ -130,6 +130,8 @@ input {
   margin-right: 25px;
   float: right;
 }
+/*#endregion Character*/
+/*#region Dashboard*/
 .icon_panel {
   margin-left: 36px;
   width: 510px;
@@ -138,4 +140,20 @@ input {
   display: none;
   padding-right: 10px;
 }
-/*#endregion Character*/
+.dash_page {
+  display: none;
+}
+.dash_title {
+  color: #b0b51b;
+  font-weight: bold;
+  padding-left: 36px;
+}
+#signOutArea {
+  color: #1b97d5;
+  float: right;
+  padding-right: 35px;
+}
+#titleText {
+  float: left;
+}
+/*#endregion Dashboard*/

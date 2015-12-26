@@ -38,7 +38,7 @@ namespace SWDataPad.Controllers
             if (CurrentUser.Characters.Any(c => c.Id == characterId))
             {
                 SessionHelper.ActiveCharacterId = characterId;
-                //return new EmptyResult();
+                return RedirectToAction("Dashboard");
             }
             return RedirectToAction("Select");
         }

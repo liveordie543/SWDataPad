@@ -50,7 +50,7 @@ namespace SWDataPad.Data.Authentication
 
         private static byte[] GetDeriveBytes(string password, byte[] salt)
         {
-            Rfc2898DeriveBytes deriveBytes = new Rfc2898DeriveBytes(password, salt, 1000);
+            Rfc2898DeriveBytes deriveBytes = new Rfc2898DeriveBytes(password, salt, 10000);
             return deriveBytes.GetBytes(20);
         }
     }

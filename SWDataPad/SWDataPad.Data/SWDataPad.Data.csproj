@@ -7,8 +7,8 @@
     <ProjectGuid>{1B5890D2-0F39-4541-988C-3795D1CD7E0E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RPGDataPad.Data</RootNamespace>
-    <AssemblyName>RPGDataPad.Data</AssemblyName>
+    <RootNamespace>SWDataPad.Data</RootNamespace>
+    <AssemblyName>SWDataPad.Data</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
