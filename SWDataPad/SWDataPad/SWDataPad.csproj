@@ -170,6 +170,7 @@
     <Content Include="Content\Backgrounds\Icons\Settings_Icon_Inactive.png" />
     <Content Include="Content\Backgrounds\Icons\Skills_Feats_Icon_Active.png" />
     <Content Include="Content\Backgrounds\Icons\Skills_Feats_Icon_Inactive.png" />
+    <Content Include="Content\Backgrounds\Skills.png" />
     <Content Include="Content\CSS\bootstrap.css" />
     <Content Include="Content\CSS\bootstrap.min.css" />
     <Content Include="Content\CSS\Gridmvc.css" />

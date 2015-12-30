@@ -157,3 +157,10 @@ input {
   float: left;
 }
 /*#endregion Dashboard*/
+/*#region Skills*/
+#skillsImg {
+  padding-left: 4px;
+  width: 565px;
+  height: 235px;
+}
+/*#endregion Skills*/
